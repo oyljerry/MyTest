@@ -1,15 +1,23 @@
 CC=gcc
-CFLAGS= -I /usr/local/curl/include/ -I /usr/local/log4c/include \
-        -L /usr/local/curl/lib/ -L /usr/local/log4c/lib/ -l curl -l log4c
-    
-main:urlhelper.o simple.o
-	$(CC) $(CFLAGS) -o mytest simple.o urlhelper.o 
-        
-urlhelper.o: urlhelper.c common.h logger.h
-	$(CC) $(CFLAGS) -c urlhelper.c -o urlhelper.o
+CFLAGS= -Wall -g
+CINCFOLER= -I /usr/local/curl/include/ -I /usr/local/log4c/include
+CLIBFOLDER= -L /usr/local/curl/lib/ -L /usr/local/log4c/lib/
+CLDLIB=-l curl -l log4c
 
-simple.o: simple.c common.h logger.h
-	$(CC) $(CFLAGS) -c simple.c -o simple.o 
+SOURCES=$(wildcard *.c)
+OBJS=$(patsubst %.c, %.o, $(SOURCES))
+    
+main:$(OBJS)
+	$(CC) $(CFLAGS) $(CLIBFOLDER) $(CLDLIB) -o mytest simple.o urlhelper.o 
+        
+#urlhelper.o: urlhelper.c common.h logger.h
+#	$(CC) $(CFLAGS) $(CINCFOLER) -c urlhelper.c -o urlhelper.o
+
+#simple.o: simple.c common.h logger.h
+#	$(CC) $(CFLAGS) $(CINCFOLER) -c simple.c -o simple.o
+
+%.o:%.c
+	 $(CC) $(CFLAGS) $(CINCFOLER) -c $< -o $@
 	
 clean:
 	rm simple.o urlhelper.o mytest
