@@ -22,10 +22,17 @@
 #include <stdio.h>
 #include <curl/curl.h>
 
+
 #include "common.h"
+#include "logger.h"
 
 int main(void)
 {
+	//log4c_init();
+	//log4c_category_t* mycat = log4c_category_get("mycat");
+	LOG_INIT("mycat");
+	LOG_ERROR("enter main()");
+
 	CURL *curl;
 	CURLcode res;
 
