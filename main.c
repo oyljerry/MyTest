@@ -24,13 +24,13 @@ int main(void)
 	struct THREADINFO threadinfo1;
 	threadinfo1.uUserID = 111;
 	strncpy(threadinfo1.szURL, "http://www.baidu.com", 260);
-	threadinfo1.fp = fopen("www.baidu.com.log", "w+");
+	strncpy(threadinfo1.szFile, "www.baidu.com.log", 260);
 
 	pthread_mutex_lock(&g_Locker);
 	int nRet = pthread_create(&pthreadid[0], NULL, threadFunc, &threadinfo1);
 	if(nRet == 0)
 	{
-		printf("create thread success, thread id = %lu\n", (unsigned long)pthreadid);
+		printf("create thread success, thread id = %lu\n", (unsigned long)pthreadid[0]);
 
 		pthread_cond_wait(&g_Cond, &g_Locker);
 		pthread_mutex_unlock(&g_Locker);
@@ -40,13 +40,13 @@ int main(void)
 	struct THREADINFO threadinfo2;
 	threadinfo2.uUserID = 222;
 	strncpy(threadinfo2.szURL, "http://www.google.com", 260);
-	threadinfo2.fp = fopen("www.google.com.log", "w+");
+	strncpy(threadinfo2.szFile, "www.google.com.log", 260);
 
 	pthread_mutex_lock(&g_Locker);
 	nRet = pthread_create(&pthreadid[1], NULL, threadFunc, &threadinfo2);
 	if(nRet == 0)
 	{
-		printf("create thread success, thread id = %lu\n", (unsigned long)pthreadid);
+		printf("create thread success, thread id = %lu\n", (unsigned long)pthreadid[1]);
 
 		pthread_cond_wait(&g_Cond, &g_Locker);
 		pthread_mutex_unlock(&g_Locker);

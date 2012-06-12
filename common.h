@@ -12,8 +12,8 @@ void* threadFunc(void* param);
 
 struct THREADINFO{
 	unsigned int uUserID;
-	char szURL[260];
-	FILE* fp;
+	char szURL[261];
+	char szFile[261];
 };
 
 size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream);
