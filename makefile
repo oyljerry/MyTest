@@ -8,7 +8,7 @@ SOURCES=$(wildcard *.c)
 OBJS=$(patsubst %.c, %.o, $(SOURCES))
     
 main:$(OBJS)
-	$(CC) $(CFLAGS) $(CLIBFOLDER) $(CLDLIB) -o mytest simple.o urlhelper.o 
+	$(CC) $(CFLAGS) $(CLIBFOLDER) $(CLDLIB) -o mytest $(OBJS) 
         
 #urlhelper.o: urlhelper.c common.h logger.h
 #	$(CC) $(CFLAGS) $(CINCFOLER) -c urlhelper.c -o urlhelper.o
@@ -20,6 +20,6 @@ main:$(OBJS)
 	 $(CC) $(CFLAGS) $(CINCFOLER) -c $< -o $@
 	
 clean:
-	rm simple.o urlhelper.o mytest
+	rm *.o mytest
 
     
