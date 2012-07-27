@@ -27,10 +27,10 @@ void myqsort(int* a, int i, int j)
 
 	while(x < y)
 	{
-		while(y >= x && a[y] > key) y--;
+		while((y > x) && (a[y] > key)) y--;
 		myswap(&a[x], &a[y]);
 
-		while(x <= y && a[x] < key) x++;
+		while((x < y) && (a[x] < key)) x++;
 		myswap(&a[y], &a[x]);
 
 	}
