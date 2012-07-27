@@ -17,6 +17,10 @@ int main(void)
 	int a[] = {13, 10, 8, 5, 23, 11, 4};
 	myqsort(a, 0, 6);
 
+	int i = 0;
+	for(; i < 6; i++)
+		printf("%d ", a[i]);
+
 	curl_global_init(CURL_GLOBAL_ALL);
 
 	pthread_cond_init(&g_Cond, NULL);
