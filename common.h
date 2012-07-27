@@ -18,4 +18,6 @@ struct THREADINFO{
 
 size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream);
 
+void myqsort(int* a, int i, int j);
+
 #endif
