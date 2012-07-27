@@ -35,7 +35,6 @@ void myqsort(int* a, int i, int j)
 
 	}
 
-	a[x] = a[y];
 
 	myqsort(a, i, x-1);
 	myqsort(a, x+1, j);
