@@ -14,6 +14,9 @@ int main(void)
 	LOG_INIT("mycat");
 	LOG_INFO("enter main()");
 
+	int a[] = {13, 10, 8, 5, 23, 11, 4};
+	myqsort(a, 0, 6);
+
 	curl_global_init(CURL_GLOBAL_ALL);
 
 	pthread_cond_init(&g_Cond, NULL);
