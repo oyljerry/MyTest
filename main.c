@@ -18,7 +18,7 @@ int main(void)
 	myqsort(a, 0, sizeof(a)/sizeof(int) - 1);
 
 	int i = 0;
-	for(; i < sizeof(a)/sizeof(int) - 1; i++)
+	for(; i < sizeof(a)/sizeof(int); i++)
 		printf("%d ", a[i]);
 
 	curl_global_init(CURL_GLOBAL_ALL);
