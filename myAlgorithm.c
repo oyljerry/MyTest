@@ -20,7 +20,7 @@ void myqsort(int* a, int i, int j)
 	if(i > j)
 		return;
 
-	int key = a[0];
+	int key = a[i];
 
 	int x = i;
 	int y = j;
