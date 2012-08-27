@@ -63,7 +63,7 @@ void merge(int a[], int first, int mid, int last, int c[])
 		c[k++] = a[j++];
 
 	for(i = 0; i < k; i++ )
-		a[first+i] = c[k];
+		a[first+i] = c[i];
 
 }
 
