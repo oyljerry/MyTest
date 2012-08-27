@@ -25,12 +25,12 @@ int main(void)
 
 	//int a[] = {13, 10, 8, 5, 23, 11, 4, 85, 100, 50, 43, 33, 19, 76, 7, 27};
 	int last = sizeof(a)/sizeof(int);
-	int p = new int[last];
+	int* p = (int*)malloc(sizeof(int)*last);
 	mergesort(a, 0, last-1, p);
 
-	delete p[];
+	free(p);
 
-	int i = 0;
+	i = 0;
 	for(; i < sizeof(a)/sizeof(int); i++)
 		printf("%d ", a[i]);
 
