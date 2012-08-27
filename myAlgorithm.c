@@ -73,7 +73,7 @@ void mergesort(int a[], int first, int last, int temp[])
 	{
 		int mid = (first + last)/2;
 		mergesort(a, 0, mid, temp);
-		mergesort(mid+1, last, temp);
+		mergesort(a, mid+1, last, temp);
 		merge(a, first, mid, last, temp);
 	}
 }
