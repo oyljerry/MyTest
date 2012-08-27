@@ -56,10 +56,10 @@ void merge(int a[], int first, int mid, int last, int c[])
 			c[k++] = a[j++];
 	}
 
-	while(i < m)
+	while(i <= m)
 		c[k++] = a[i++];
 
-	while(j < n)
+	while(j <= n)
 		c[k++] = a[j++];
 
 	for(i = 0; i < k; i++ )
