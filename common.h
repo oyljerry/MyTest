@@ -19,5 +19,6 @@ struct THREADINFO{
 size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream);
 
 void myqsort(int* a, int i, int j);
+void mergesort(int a[], int first, int last, int temp[]);
 
 #endif
