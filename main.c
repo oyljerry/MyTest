@@ -23,16 +23,16 @@ int main(void)
 
 	printf("\n");
 
-	//int a[] = {13, 10, 8, 5, 23, 11, 4, 85, 100, 50, 43, 33, 19, 76, 7, 27};
-	int last = sizeof(a)/sizeof(int);
+	int b[] = {13, 10, 8, 5, 23, 11, 4, 85, 100, 50, 43, 33, 19, 76, 7, 27};
+	int last = sizeof(b)/sizeof(int);
 	int* p = (int*)malloc(sizeof(int)*last);
-	mergesort(a, 0, last-1, p);
+	mergesort(b, 0, last-1, p);
 
 	free(p);
 
 	i = 0;
-	for(; i < sizeof(a)/sizeof(int); i++)
-		printf("%d ", a[i]);
+	for(; i < sizeof(b)/sizeof(int); i++)
+		printf("%d ", b[i]);
 
 	printf("\n");
 
