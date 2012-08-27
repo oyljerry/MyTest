@@ -23,7 +23,7 @@ int main(void)
 
 	printf("\n");
 
-	int a[] = {13, 10, 8, 5, 23, 11, 4, 85, 100, 50, 43, 33, 19, 76, 7, 27};
+	//int a[] = {13, 10, 8, 5, 23, 11, 4, 85, 100, 50, 43, 33, 19, 76, 7, 27};
 	int last = sizeof(a)/sizeof(int);
 	int p = new int[last];
 	mergesort(a, 0, last-1, p);
