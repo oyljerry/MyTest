@@ -48,7 +48,7 @@ void merge(int a[], int first, int mid, int last, int c[])
 	int j = mid + 1;
 	int n = last;
 	int k = 0;
-	while (i < m && j < n)
+	while (i <= m && j <= n)
 	{
 		if(a[i] < a[j])
 			c[k++] = a[i++];
